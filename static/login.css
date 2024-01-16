@@ -1,0 +1,403 @@
+.loginbody {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.loginform {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.logininput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.logininput[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+.logininput[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.logininput::placeholder {
+    color: #aaa;
+}
+
+.user_approve_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.user_approve_th{
+    border: 1px solid #0a0808;
+    padding: 8px;
+    text-align: left;
+}
+.user_approve_td {
+    border: 1px solid #0a0808;
+    padding: 8px;
+    text-align: left;
+}
+
+.user_approve_th {
+    background-color: #958787;
+}
+
+.user_approve_button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: darkgray;
+    border:  1px solid darkgray;
+    border-radius: 3px;
+
+}
+
+
+.appointmentbody {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.appointmentform {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+
+.appointmentinput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.appointmentinput[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+}
+
+.appointmentinput[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.appointmentinput::placeholder {
+    color: #aaa;
+}
+.pro{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 700px;
+   
+    justify-content: center;
+    align-items: center;
+    
+}
+.prof{
+    width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.regbody {
+    font-family:'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.registration-container {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.regh2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.regform {
+    display: flex;
+    flex-direction: column;
+}
+
+.reglabel {
+    color: #555;
+    margin-bottom: 8px;
+}
+
+
+.regform input,select {
+            padding: 12px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+.regform button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.regform button:hover {
+    background-color: #45a049;
+}
+
+
+.aboutbody {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.aboutheader {
+    text-align: center;
+    padding: 20px;
+    background-image: url(./image/doctor2.jpeg);
+    background-size: 100% 100%;
+}
+
+.aboutimg {
+    max-width: 100%;
+  height: auto;
+  position: 100% 100%;
+}
+
+.aboutsection {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.aboutbody h1, h2, h3 {
+    color: #4CAF50;
+}
+
+
+
+.homebody {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.homeheader {
+    background-color: hsl(120, 5%, 47%);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.homeheader h1 {
+    margin-bottom: 10px;
+}
+
+.homesection {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.homeh2 {
+    color: #4CAF50;
+}
+
+.homeul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.homeli {
+    margin-bottom: 10px;
+}
+
+.homeimg {
+width: 100%;
+height: 500px;
+background-image: url(./image/doctor4.jpg);
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+
+
+
+.contactbody {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+ .contacth1 {
+    margin-bottom: 10px;
+}
+
+.contactsection {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contachth2 {
+    color: #007BFF;
+}
+
+
+.contactlabel {
+    display: block;
+    font-weight: bold;
+}
+.contactdiv{
+    
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+.usertable {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+
+}
+
+.userth {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    background-color: #f2f2f2;
+}
+
+.usertd {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    background-color: #f2f2f2;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.usera {
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.useraa:hover {
+    background-color: #4caf50;
+}
+
+
+.managebody {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px ;
+  }
+
+.manageh2 {
+    color: #333;
+  }
+
+.managea {
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+.managetable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+.manageth{
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    background-color: #f2f2f2;
+} 
+.managetd {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  
+
+.managetd a {
+    color: #007bff;
+    margin-right: 10px;
+  }

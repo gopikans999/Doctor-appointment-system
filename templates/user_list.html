@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <title>Document</title>
+</head>
+<body>
+ {% block userlist %}  
+<h2>Doctor List</h2>
+<table class="usertable">
+    <tr>
+        <th class="userth">Username</th>
+        <th class="userth">User Role</th>
+        
+        <th>Actions</th>
+    </tr>
+    {% for doctor in doctors %}
+    <tr>
+        <td class="usertd">{{ doctor.username }}</td>
+        <td class="usertd">{{ doctor.user_role }}</td>
+        
+        <td class="usertd">
+            <a class="usera" href="{% url 'userupdate' doctor.username %}">Update</a>
+            <a  class="usera" href="{% url 'userdelete' doctor.username %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2 class="userh2">Patient List</h2>
+<table class="usertable">
+    <tr>
+        <th class="userth">Username</th>
+        <th class="userth">User Role</th>
+        
+        <th>Actions</th>
+    </tr>
+    {% for patient in patients %}
+    <tr>
+        <td class="usertd">{{ patient.username }}</td>
+        <td class="usertd">{{ patient.user_role }}</td>
+        <td class="usertd">
+            <a class="usera" href="{% url 'userupdate' patient.username %}">Update</a>
+            <a class="usera" href="{% url 'userdelete' patient.username %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+    
+</table>
+{% endblock %}
+</body>
+</html>

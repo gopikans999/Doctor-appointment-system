@@ -1,0 +1,45 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'appointment_pending.css' %}">
+</head>
+<header>
+  {% include 'header.html' %}
+</header>
+<body>
+ 
+  <h2>Pending Appointments</h2>
+  {% if appointments %}
+    <ul>
+      {% for appointment in appointments %}
+        
+          {% if user.username == appointment.doctor %}
+          <li>
+          {{ appointment.patient }}'s Appointment on {{ appointment.date }} at {{ appointment.time }}
+          <div class="fm">
+            <form method="post" action="{% url 'approve_appointment' appointment.id %}">
+              {% csrf_token %}
+              <button type="submit">Approve</button>
+              
+            </form>
+            <form method="post" action="{% url 'reject_appointment' appointment.id %}">
+              {% csrf_token %}
+              <button type="submit">Reject</button>
+            </form>
+          </div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No pending appointments.</p>
+  {% endif %}
+ 
+</body>
+</html>

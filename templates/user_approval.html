@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    {%  block approve %}
+<h1>User Approval Page</h1>
+<form method="post" action="{% url 'user_approval' %}">
+    {% csrf_token %}
+    <table class="user_approve_table">
+        <thead>
+            <tr>
+                <th class="user_approve_th">Username</th>
+                <th class="user_approve_th">User Role</th>
+                <th class="user_approve_th">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users_to_approve %}
+            <tr>
+                <td class="user_approve_td">{{ user.username }}</td>
+                <td class="user_approve_td">{{ user.user_role }}</td>
+                <td class="user_approve_td">
+                    <input type="hidden" name="selected_users" value="{{ user.username }}">
+                    <button class="user_approve_button" type="submit" name="approve" value="{{ user.username }}">Approve</button>
+                    <button class="user_approve_button" type="submit" name="reject" value="{{ user.username }}">Reject</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>
+{% endblock %}
+</body>
+</html>
+

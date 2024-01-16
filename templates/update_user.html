@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'update_user.css' %}">
+</head>
+<body>
+    <div class="update-form">
+        <h2>Update User</h2>
+        <form method="post">
+            {% csrf_token %}
+            
+            <label for="{{ form.username.id_for_label }}">Username:</label>
+            {{ form.username }}
+            
+            <label for="{{ form.first_name.id_for_label }}">First Name:</label>
+            {{ form.first_name }}
+            <label for="{{ form.last_name.id_for_label }}">Last Name:</label>
+            {{ form.last_name}}
+
+            <label for="{{ form.age.id_for_label }}">Age:</label>
+            {{ form.age}}
+
+            <label for="{{ form.email.id_for_label }}">Email:</label>
+            {{ form.email }}
+            
+            
+
+            <label for="{{ form.number.id_for_label }}">Number:</label>
+            {{ form.number }}
+
+            <label for="{{ form.user_role.id_for_label }}">Role:</label>
+            {{ form.user_role }}
+            
+            <button type="submit">Update</button>
+        </form>
+    </div>
+    
+</body>
+</html>

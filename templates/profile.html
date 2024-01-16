@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="{% static 'login.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+  {% block profile %}
+    {% if user.is_authenticated %}
+    <div class="pro">
+    <div class="prof">
+    
+        <div class="col-lg-4">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              {% if request.user.gender == 'FEMALE'%}
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                      alt="Generic placeholder image" class="img-fluid rounded-circle "
+                      style="width: 70px;">
+              {% endif %} 
+              {% if request.user.gender == 'MALE'%}
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" 
+                      alt="Generic placeholder image" class="img-fluid rounded-circle "
+                      style="width: 70px;">
+              {% endif %} 
+              <h5 class="my-3">{{user.username}}</h5>
+              <p class="text-muted mb-1">{{user.email}}</p>
+              <p class="text-muted mb-4">Phone Number:{{user.number}}</p>
+              <p class="text-muted mb-4">{{user.city}}</p>
+              <p class="text-muted mb-1">Gender:{{user.gender}}</p>
+              <p class="text-muted mb-1">Age:{{user.age}}</p>
+            </div>
+          </div>
+          
+          </div>
+        
+      </div>
+    </div> 
+    {% endif %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+  {% block manage_appointment %}
+  <div class="managebody">
+    <h2>MANAGE APPOINTMENT </h2>
+  <table class="usertable">
+    <thead>
+      <tr>
+        <th class="userth">Doctor</th>
+        <th class="userth">Patient</th>
+        <th class="userth">Date</th>
+        <th class="userth">Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for appointment in appointments %}
+        <tr>
+          <td class="usertd">{{ appointment.doctor}}</td>
+          <td class="usertd">{{ appointment.patient }}</td>
+          <td class="usertd">{{ appointment.date }}</td>
+          <td class="usertd">{{ appointment.time }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% endblock %}
+</body>
+</html>
+

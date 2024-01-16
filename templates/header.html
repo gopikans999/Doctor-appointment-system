@@ -1,0 +1,50 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'head.css' %}">
+</head>
+<body>
+    <div class="headd1">
+        <a href="{% url 'hom' %}"><p>HOME</p>||</a>
+        
+        <a href="{% url 'about' %}"><P>ABOUT US</P>||</a>
+        <a href="{% url 'log' %}"><p>LOGIN</p>||</a>
+        {% if not user.is_authenticated%}
+        <a href="{% url 'reg' %}"><p>REGISTER</p>||</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}"><p>LOGOUT</p>||</a>
+        
+        {% endif %}
+        {% if user.is_superuser %}
+
+        <a href="{% url 'user_approval' %}"><p>USER APROOVAL</p>||</a>
+        <a href = "{% url 'userlist' %}"><p>USERS LIST</p>||</a>
+        <a href="{% url 'manage_time_slots' %}"><p>ADD TIME</p>||</a>
+        <a href="{% url 'manage_appointment'%}"><p>MANAGE APPOINTMENT</p>||</a>
+
+        {% endif %}
+        
+        {% if user.user_role == 'PATIENT' %}
+
+        <a href="{% url 'book_doctor' %}"><p>BOOK NOW</p>||</a>
+
+        {% endif %}
+
+        {% if user.user_role == 'DOCTOR' %}
+
+        <a href="{% url 'approve' %}"><p>APPROVE APPINTMENTS</p>||</a>
+
+        {% endif %}
+        <a href="{% url 'cont' %}"><P>CONTACT US</P>||</a>
+        <a href ="{% url 'prof' %}"><p>PROFILE</p>||</a>
+    </div>    
+    
+</body>
+</html>

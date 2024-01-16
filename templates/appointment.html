@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'login.css' %}">
+  <title>Document</title>
+</head>
+<body>
+  {% block appointment %}
+  <div class= "appointmentbody">
+    <form  class="appointmentform" method="post">
+      <h2>Book Appointment with Dr.{{ doctor.username }}</h2>
+      {% csrf_token %}
+      
+      <div class="appointmentinput">
+        <label class="appointmentlabel" >Date:</label>
+        {{ form.datee }}
+      </div>
+  
+      <div class="appointmentinput">
+        <label class="appointmentlabel" >Time:</label>
+        {{ form.time }}
+      </div>
+  
+      <button class="appointmentinput" type="submit" class="btn btn-primary">Book Now</button>
+    </form>
+  </div>
+  {% endblock %}
+</body>
+</html>

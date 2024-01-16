@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    {% block about %}
+    <div class="aboutbody">
+
+    <section class="aboutsection ">
+        <h2>About Doctor Appointment System</h2>
+        <img class="aboutimg" src="{% static 'image/doctor2.jpeg' %}" >
+        <p>
+            Welcome to the Doctor Appointment System! Our platform is designed to simplify the process of scheduling
+            appointments with healthcare professionals, providing a seamless experience for both patients and doctors.
+        </p>
+        <!-- Add more information if needed -->
+    </section>
+
+    
+</div>
+{% endblock %}
+</body>
+</html>

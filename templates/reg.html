@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    {% block registration %}
+    <div class="regbody">
+    <div class="registration-container">
+        <h2 class="regh2" >User Registration</h2>
+        <form class="regform" method="post">
+            {% csrf_token %}
+            
+            <label class="reglabel" for="{{ form.username.id_for_label }}">Username:</label>
+            {{ form.username }}
+
+            <label class="reglabel" for="{{ form.user_role.id_for_label }}">Role:</label>
+            {{ form.user_role }}
+
+            <label class="reglabel" for="{{ form.first_name.id_for_label }}">First Name:</label>
+            {{ form.first_name }}
+            
+            <label class="reglabel" for="{{ form.last_name.id_for_label }}">Last Name:</label>
+            {{ form.last_name }}
+
+            <label  class="reglabel" for="{{ form.gender.id_for_label }}">Gender:</label>
+            {{ form.gender }}
+
+            <label class="reglabel" for="{{ form.age.id_for_label }}">Age:</label>
+            {{ form.age }}
+
+            <label class="reglabel" for="{{ form.email.id_for_label }}">Email:</label>
+            {{ form.email }}
+            
+            <label class="reglabel" for="{{ form.number.id_for_label }}">Number:</label>
+            {{ form.number }}
+            
+            <label class="reglabel" for="{{ form.password1.id_for_label }}">Password:</label>
+            {{ form.password1 }}
+            
+            <label class="reglabel" for="{{ form.password2.id_for_label }}">Confirm Password:</label>
+            {{ form.password2 }}
+            
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

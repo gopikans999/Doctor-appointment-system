@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    {% block home %}
+    <div class="homebody">
+    
+    <header class="homeheader">
+        <h1>Welcome to the Doctor Appointment System</h1>
+        <p>Your one-stop solution for hassle-free doctor appointments.</p>
+    </header>
+    <div class="homeimg">
+        
+    </div>
+
+    <section class="homesection" id="overview">
+        <h2 class="homeh2">System Overview</h2>
+        <p class="homep">
+            The Doctor Appointment System simplifies the process of scheduling and managing appointments
+            with healthcare professionals. Our user-friendly platform allows you to book appointments,
+            view available time slots, and receive timely reminders for your upcoming visits.
+        </p>
+    </section>
+
+    <section class="homesection" id="services">
+        <h2 class="homeh2">Our Services</h2>
+        <ul class="homeul">
+            <li class="homeli">Effortless Appointment Booking</li>
+            <li class="homeli">View Doctor Availability</li>
+            <li class="homeli">Receive Appointment Reminders</li>
+            <li class="homeli">Secure Patient Information</li>
+            <!-- Add more services as needed -->
+        </ul>
+    </section>
+
+    <section class="homesection" id="how-it-works">
+        <h2 class="homeh2">How It Works</h2>
+        <ol>
+            <li class="homeli">Create an account or log in if you're an existing user.</li>
+            <li class="homeli">Browse available doctors and select a suitable time slot.</li>
+            <li class="homeli">Attend your appointment with peace of mind.</li>
+        </ol>
+    </section>
+</div>
+{% endblock %}
+</body>
+</html>

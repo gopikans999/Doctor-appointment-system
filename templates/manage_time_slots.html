@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+  {% block manage_time %}
+  <div class="managebody">
+
+  <a class="usera">Add Time Slot</a>
+  <table class="usertable">
+    <thead>
+      <tr>
+        <th class="userth">Time</th>
+        <th class="userth">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for time_slot in time_slots %}
+        <tr>
+          <td class="usertd">{{ time_slot.time }}</td>
+          <td class="usertd">
+            <a href="{% url 'edit_time_slot' time_slot.id %}" class="usera">Edit</a> 
+            <a  href="{% url 'delete_time_slot' time_slot.id %}" class="usera">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  {% endblock %}
+</body>
+</html>

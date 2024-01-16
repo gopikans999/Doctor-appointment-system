@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Add Time Slot</h2>
+  <form method="post" action="{% url 'add_time' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+
+  
+  <h2 class="userh2">Available Time List</h2>
+<table class="usertable">
+    <tr>
+        <th class="userth">Time</th>
+        
+        <th>Actions</th>
+        <th>{{timeslotes}}</th>
+    </tr>
+    {% for slotes in timeslotes %}
+    <tr>
+        <td class="usertd">{{ slotes.time }}</td>
+        <td class="usertd">
+            <a class="usera" href="{% url 'userupdate' patient.username %}">Update</a>
+            <a class="usera" href="{% url 'userdelete' patient.username %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+    
+</table>
+</body>
+</html>
+  
