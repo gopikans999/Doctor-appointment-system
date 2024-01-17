@@ -34,6 +34,7 @@ def userregistration(request):
             user = form.save(commit=False)
             user.approved = False  # New users are not approved by default
             user.save()
+            print("save")
             messages.success(request, 'User has been registered.')
             return redirect(home)
         
